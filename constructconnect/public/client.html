@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConstructConnect - Client Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dash-body">
+  <aside id="drawer" class="drawer">
+    <div class="drawer-header">
+      <div class="brand-inline">
+        <span class="brand-symbol small">🏗️</span>
+        <span class="brand-name small">ConstructConnect</span>
+      </div>
+      <button id="drawerClose" class="icon-btn">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a class="nav-item active" data-route="dashboard">🏠 Dashboard</a>
+      <a class="nav-item" data-route="projects">📁 Projects</a>
+      <a class="nav-item" data-route="tasks">✅ Tasks</a>
+      <a class="nav-item" data-route="documents">📄 Documents</a>
+      <a class="nav-item" data-route="budget">💰 Budget</a>
+      <a class="nav-item" data-route="reports">📊 Reports</a>
+    </nav>
+    <div class="drawer-footer">
+      <button id="signOut" class="secondary-btn full">Sign out</button>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="left">
+      <button id="hamburger" class="icon-btn">☰</button>
+      <span class="topbar-title">Dashboard Overview</span>
+    </div>
+    <div class="right">
+      <div id="notif" class="notif">
+        <button id="notifBtn" class="icon-btn" aria-label="Notifications">🔔</button>
+        <span id="notifBadge" class="badge" hidden>0</span>
+        <div id="notifList" class="notif-list" hidden></div>
+      </div>
+      <div id="userInfo" class="user-info"></div>
+    </div>
+  </header>
+
+  <main class="content">
+    <p class="subheading">Welcome back! Here's what's happening with your projects.</p>
+
+    <section class="metrics">
+      <div class="metric-card">
+        <div>
+          <h4>Total projects</h4>
+          <div id="mTotal" class="metric-value">0</div>
+        </div>
+        <div class="metric-icon">📁</div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <h4>Active projects</h4>
+          <div id="mActive" class="metric-value">0</div>
+        </div>
+        <div class="metric-icon">⚙️</div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <h4>Total budget</h4>
+          <div id="mBudget" class="metric-value">$0</div>
+        </div>
+        <div class="metric-icon">💼</div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <h4>Budget used</h4>
+          <div id="mUsed" class="metric-value">$0</div>
+        </div>
+        <div class="metric-icon">🧾</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h3>Recent projects</h3>
+        <nav class="panel-nav">
+          <button class="chip active">All</button>
+          <button class="chip">Active</button>
+          <button class="chip">Planned</button>
+        </nav>
+      </div>
+      <hr />
+      <div id="recentProjects" class="list"></div>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/notifications.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
+
